@@ -1,11 +1,29 @@
 <?php
+
+//////---------------///////----!!!!
+
+// require "./includes/tools.php";
+
+// Verbinde mit mySQL, mit Hilfe eines PHP PDO Object
+// $dbHost = getenv('DB_HOST');
+// $dbName = getenv('DB_NAME');
+// $dbUser = getenv('DB_USER');
+// $dbPassword = getenv('DB_PASSWORD');
+
+// $dbConnection = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8", $dbUser, $dbPassword);
+//////---------------///////----!!!!
+
+
 // Connect to the database using PDO
-$dsn = "mysql:host=localhost;dbname={YOUR_DB_NAME}"; // Replace with your database name
-$username = "webDev"; // Replace with your username
-$password = "webDev"; // Replace with your password
+$name = getenv('DB_NAME');
+
+$host = getenv('DB_HOST');
+$username = getenv('DB_USER'); // Replace with your username
+$password = getenv('DB_PASSWORD'); // Replace with your password
+// $dsn = new PDO("mysql:host=$host;dbname=$name;charset=utf8", $username, $password); // Replace with your database name
 
 try {
-    $conn = new PDO($dsn, $username, $password);
+    $conn = new PDO("mysql:host=$host;dbname=$name;charset=utf8", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Check if the "stories" table exists
