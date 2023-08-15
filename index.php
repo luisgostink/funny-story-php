@@ -1,3 +1,26 @@
+<?php 
+
+include "./tools/tools.php";
+
+session_start();
+
+$answers = [
+        'proper_noun' => $_SESSION['proper_noun'],
+        'verb_1' => $_SESSION['verb_1'],
+        'noun_1' => $_SESSION['noun_1'],
+        'adjective_1' => $_SESSION['adjective_1'],
+        'noun_2' => $_SESSION['noun_2'],
+        'exclamation' => $_SESSION['exclamation'],
+        'noun_3' => $_SESSION['noun_3'],
+        'adjective_phrase_1' => $_SESSION['adjective_phrase_1'],
+        'noun_4' => $_SESSION['noun_4'],
+        'adjective_phrase_2' => $_SESSION['adjective_phrase_2'],
+        
+        ]; 
+
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +34,38 @@
 <body>
 
     <h1>🤣 Answer the Questions -> Generate a Funny Story 😃</h1>
+
+    <?php
+
+    if (isset($_SESSION))
+    {
+
+    // Add the answers from the submission form here. 
+    $answers = [
+        'proper_noun' => $_SESSION['proper_noun'],
+        'verb_1' => $_SESSION['verb_1'],
+        'noun_1' => $_SESSION['noun_1'],
+        'adjective_1' => $_SESSION['adjective_1'],
+        'noun_2' => $_SESSION['noun_2'],
+        'exclamation' => $_SESSION['exclamation'],
+        'noun_3' => $_SESSION['noun_3'],
+        'adjective_phrase_1' => $_SESSION['adjective_phrase_1'],
+        'noun_4' => $_SESSION['noun_4'],
+        'adjective_phrase_2' => $_SESSION['adjective_phrase_2'],
+        
+        ]; 
+
+    }
+
+    else {
+
+        echo "$_SESSION is NOT SET"; 
+    }
+
+
+
+
+    ?>
 
     <form action="./story.php" method="post">
         <label for="proper_noun">What's the name of your favorite fictional character?</label>
