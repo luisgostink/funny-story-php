@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 
     <h1>🤣 Answer the Questions -> Generate a Funny Story 😃</h1>
 
-    <form action="{YOUR_CODE_HERE}" method="{YOUR CODE HERE}">
+    <form action="./story.php" method="post">
         <label for="proper_noun">What's the name of your favorite fictional character?</label>
         <input type="text" name="proper_noun" id="proper_noun"><br><br>
 
